@@ -1,9 +1,9 @@
 {
-  "name": "nonsole",
+  "name": "onsole",
   "version": "0.0.0",
   "description": "Like console but on screen",
-  "main": "src/nonsole.js",
-  "repository": "https://github.com/gimlids/nonsole",
+  "main": "src/onsole.js",
+  "repository": "https://github.com/gimlids/onsole",
   "author": "David Stolarsky",
   "license": "MIT",
   "private": false
