@@ -41,6 +41,7 @@ var _interface = {
           }
         }
         nonsoleEl.innerHTML = '<div>'+_arguments.map(formatLogItem).join(', ')+'</div>' + nonsoleEl.innerHTML;
+        nonsoleEl.style.display = 'block';
     },
     info: function() {
       var newArguments = ['ℹ️'].concat(getArguments(arguments));
@@ -56,6 +57,9 @@ var _interface = {
     },
     clear: function() {
       nonsoleEl.innerHTML = "";
+    },
+    hide: function() {
+      nonsoleEl.style.display = 'none';
     }
 
 };
