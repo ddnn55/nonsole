@@ -5,23 +5,23 @@
 }(this, (function () { 'use strict';
 
 /*
-onsole.js 
+nonsole.js 
 Like console but on screen
 */
 
 module.exports = function() {
   
-  var onsoleEl = document.createElement('div');
-  onsoleEl.style.position = 'fixed';
-  onsoleEl.style.bottom = '0px';
-  onsoleEl.style.height = '100px';
-  onsoleEl.style.overflow = 'scroll';
-  onsoleEl.style.fontSize = '10px';
-  onsoleEl.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
-  onsoleEl.style.color = 'white';
-  onsoleEl.style.fontFamily = 'monospace';
-  onsoleEl.style.right = 0;
-  onsoleEl.style.left = 0;
+  var nonsoleEl = document.createElement('div');
+  nonsoleEl.style.position = 'fixed';
+  nonsoleEl.style.bottom = '0px';
+  nonsoleEl.style.height = '100px';
+  nonsoleEl.style.overflow = 'scroll';
+  nonsoleEl.style.fontSize = '10px';
+  nonsoleEl.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
+  nonsoleEl.style.color = 'white';
+  nonsoleEl.style.fontFamily = 'monospace';
+  nonsoleEl.style.right = 0;
+  nonsoleEl.style.left = 0;
   
   
   var attached = false;
@@ -38,7 +38,7 @@ module.exports = function() {
       log: function() {
           if(!attached) {
             attached = true;
-              document.querySelector('body').appendChild(onsoleEl);
+              document.querySelector('body').appendChild(nonsoleEl);
           }
           var _arguments = getArguments(arguments);
           function formatLogItem(a) {
@@ -49,7 +49,7 @@ module.exports = function() {
               return a.toString();
             }
           }
-          onsoleEl.innerHTML = '<div>'+_arguments.map(formatLogItem).join(', ')+'</div>' + onsoleEl.innerHTML;
+          nonsoleEl.innerHTML = '<div>'+_arguments.map(formatLogItem).join(', ')+'</div>' + nonsoleEl.innerHTML;
       },
       info: function() {
         var newArguments = ['ℹ️'].concat(getArguments(arguments));
@@ -60,7 +60,7 @@ module.exports = function() {
         _interface.log.apply(_interface, newArguments);
       },
       clear: function() {
-        onsoleEl.innerHTML = "";
+        nonsoleEl.innerHTML = "";
       }
 
   };
