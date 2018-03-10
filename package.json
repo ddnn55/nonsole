@@ -1,6 +1,6 @@
 {
   "name": "nonsole",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Like console but on screen",
   "main": "src/nonsole.js",
   "repository": "https://github.com/gimlids/nonsole",
