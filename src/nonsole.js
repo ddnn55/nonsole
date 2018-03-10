@@ -15,7 +15,6 @@ nonsoleEl.style.fontFamily = 'monospace';
 nonsoleEl.style.right = 0;
 nonsoleEl.style.left = 0;
 
-
 var attached = false;
 
 function getArguments(args) {
