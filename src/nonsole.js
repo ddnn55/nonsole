@@ -9,7 +9,7 @@ nonsole.js
 Like console but on screen
 */
 
-module.exports = function() {
+return function() {
   
   var nonsoleEl = document.createElement('div');
   nonsoleEl.style.position = 'fixed';
