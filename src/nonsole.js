@@ -9,7 +9,7 @@ nonsole.js
 Like console but on screen
 */
 
-return function() {
+
   
   var nonsoleEl = document.createElement('div');
   nonsoleEl.style.position = 'fixed';
@@ -65,6 +65,6 @@ return function() {
 
   };
   return _interface;
-};
+
 
 })));
