@@ -1,15 +1,9 @@
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(factory());
-}(this, (function () { 'use strict';
-
 /*
 nonsole.js 
 Like console but on screen
 */
 
-
+module.exports = function() {
   
   var nonsoleEl = document.createElement('div');
   nonsoleEl.style.position = 'fixed';
@@ -67,4 +61,5 @@ Like console but on screen
   return _interface;
 
 
-})));
+};
+
