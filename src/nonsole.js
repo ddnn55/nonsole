@@ -40,7 +40,7 @@ var _interface = {
             return a.toString();
           }
         }
-        nonsoleEl.innerHTML = '<div>'+_arguments.map(formatLogItem).join(', ')+'</div>' + nonsoleEl.innerHTML;
+        nonsoleEl.innerHTML = '<div style="margin:0">'+_arguments.map(formatLogItem).join(', ')+'</div>' + nonsoleEl.innerHTML;
         nonsoleEl.style.display = 'block';
     },
     info: function() {
