@@ -9,6 +9,7 @@ nonsoleEl.style.bottom = '0px';
 nonsoleEl.style.height = '100px';
 nonsoleEl.style.overflow = 'scroll';
 nonsoleEl.style.fontSize = '10px';
+nonsoleEl.style.lineHeight = '10px';
 nonsoleEl.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
 nonsoleEl.style.color = 'white';
 nonsoleEl.style.fontFamily = 'monospace';
