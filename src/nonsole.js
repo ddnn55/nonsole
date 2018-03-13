@@ -17,6 +17,7 @@ nonsoleEl.style.right = 0;
 nonsoleEl.style.left = 0;
 
 var attached = false;
+var timestamp = false;
 
 function getArguments(args) {
   var _arguments = [];
@@ -27,42 +28,46 @@ function getArguments(args) {
 }
 
 var _interface = {
-    log: function() {
-        if(!attached) {
-          attached = true;
-            document.querySelector('body').appendChild(nonsoleEl);
+  log: function() {
+      if(!attached) {
+        attached = true;
+          document.querySelector('body').appendChild(nonsoleEl);
+      }
+      var _arguments = getArguments(arguments);
+      function formatLogItem(a) {
+        try {
+          return JSON.stringify(a, null, 2);
         }
-        var _arguments = getArguments(arguments);
-        function formatLogItem(a) {
-          try {
-            return JSON.stringify(a, null, 2);
-          }
-          catch(e) {
-            return a.toString();
-          }
+        catch(e) {
+          return a.toString();
         }
-        nonsoleEl.innerHTML = '<div style="margin:0">'+_arguments.map(formatLogItem).join(', ')+'</div>' + nonsoleEl.innerHTML;
-        nonsoleEl.style.display = 'block';
-    },
-    info: function() {
-      var newArguments = ['ℹ️'].concat(getArguments(arguments));
-      _interface.log.apply(_interface, newArguments);
-    },
-    warn: function() {
-      var newArguments = ['⚠️'].concat(getArguments(arguments));
-      _interface.log.apply(_interface, newArguments);
-    },
-    error: function() {
-      var newArguments = ['⛔️'].concat(getArguments(arguments));
-      _interface.log.apply(_interface, newArguments);
-    },
-    clear: function() {
-      nonsoleEl.innerHTML = "";
-    },
-    hide: function() {
-      nonsoleEl.style.display = 'none';
-    }
-
+      }
+      nonsoleEl.innerHTML = '<div style="margin:0">'(
+        timestamp ? '<span style="color:#888888">'+(new Date().toISOString())+'</span>' : ''
+      )+_arguments.map(formatLogItem).join(', ')+'</div>' + nonsoleEl.innerHTML;
+      nonsoleEl.style.display = 'block';
+  },
+  info: function() {
+    var newArguments = ['ℹ️'].concat(getArguments(arguments));
+    _interface.log.apply(_interface, newArguments);
+  },
+  warn: function() {
+    var newArguments = ['⚠️'].concat(getArguments(arguments));
+    _interface.log.apply(_interface, newArguments);
+  },
+  error: function() {
+    var newArguments = ['⛔️'].concat(getArguments(arguments));
+    _interface.log.apply(_interface, newArguments);
+  },
+  clear: function() {
+    nonsoleEl.innerHTML = "";
+  },
+  hide: function() {
+    nonsoleEl.style.display = 'none';
+  },
+  enableTimestamp: function() {
+    timestamp = true;
+  }
 };
 
 module.exports = _interface;
