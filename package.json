@@ -1,6 +1,6 @@
 {
   "name": "nonsole",
-  "version": "0.0.12",
+  "version": "0.0.14",
   "description": "Like console but on screen",
   "main": "dist/nonsole.min.js",
   "scripts": {
