@@ -70,5 +70,5 @@ if(document) {
   
 }
 else {
-  return console;
+  module.exports = console;
 }
