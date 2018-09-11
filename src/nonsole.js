@@ -27,6 +27,9 @@ function getArguments(args) {
 }
 
 var _interface = {
+    setClass: function(cls) {
+      nonsoleEl.setAttribute('class', cls);
+    },
     log: function() {
         if(!attached) {
           attached = true;
